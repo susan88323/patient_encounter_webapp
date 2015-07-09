@@ -1,0 +1,42 @@
+<h1>Add a new Patient</h1>
+
+<% if @patient.errors.any? %>
+      <h2>Errors:</h2>
+      <ul>
+        <% @patient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+<% end %>
+
+<%= form_for @patient do |f| %>
+    <p>
+      <%= f.label "First Name:" %> 
+      <%= f.text_field :firstName %>
+    </p>
+    <p>
+      <%= f.label "Middle Name:" %>
+      <%= f.text_field :middleName %>
+    </p>
+    <p>
+      <%= f.label "Last Name:" %>
+      <%= f.text_field :lastName %>
+    </p>
+    <p>
+      <%= f.label "Weight:" %>
+      <%= f.text_field :weight %>
+    </p>
+    <p>
+      <%= f.label "Height:" %>
+      <%= f.text_field :height %>
+    </p>
+    <p>
+      <%= f.label "MRN:" %>
+      <%= f.text_field :mrn %>
+    </p>
+    <p>
+      <%= f.submit "Submit" %> 
+      <%= link_to '<button type="button">Cancel</button>'.html_safe, root_path %>
+    </p>
+
+<% end %>

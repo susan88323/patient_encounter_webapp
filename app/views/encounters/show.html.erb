@@ -1,0 +1,31 @@
+<h1>View Encounter Details</h1>
+
+<p>
+  <%= "Visit Number:" %>
+  <%= @encounter.visitNumber %>
+</p>
+<p>
+  <%= "Admitted At:" %>
+  <%= @encounter.admittedAt %>
+</p>
+<p>
+  <%= "Discharged At:" %>
+  <%= @encounter.dischargedAt %>
+</p>
+<p>
+  <%= "Location:" %>
+  <%= @encounter.location %>
+</p>
+<p>
+  <%= "Room:" %>
+  <%= @encounter.room %>
+</p>
+<p>
+  <%= "Bed:" %>
+  <%= @encounter.bed %>
+</p>
+<p>
+<%= link_to "Edit", edit_patient_encounter_path(@patient, @encounter) %>
+<%= link_to "Destroy", patient_encounter_path(@patient, @encounter), method: :delete, data: { confirm: "Are you sure?" } %>
+<%= link_to '<button type="button">Back</button>'.html_safe, patient_path(@patient) %>
+</p>

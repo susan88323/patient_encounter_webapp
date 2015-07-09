@@ -1,0 +1,46 @@
+<h1>Edit Selected Encounter</h1>
+
+<% if @encounter.errors.any? %>
+      <h2>Errors:</h2>
+      <ul>
+        <% @encounter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    
+
+<%= form_for [@patient, @encounter] do |f| %>
+
+    <p>
+      <%= f.label "Visit Number" %>
+      <%= f.text_field :visitNumber %>
+    </p>
+    <p>
+      <%= f.label "Admitted At" %>
+      <%= f.text_field :admittedAt %>
+    </p>
+    <p>
+      <%= f.label "Discharged At" %>
+      <%= f.text_field :dischargedAt %>
+    </p>
+    <p>
+      <%= f.label "Location" %>
+      <%= f.text_field :location %>
+    </p>
+    <p>
+      <%= f.label "Room" %>
+      <%= f.text_field :room %>
+    </p>
+    <p>
+      <%= f.label "Bed" %>
+      <%= f.text_field :bed %>
+    </p>
+    <p>
+      <%= f.submit "Submit" %>
+    </p>
+    <p>
+      <%= link_to '<button type="button">Cancel</button>'.html_safe, patient_path(@patient) %>
+    </p>
+  
+<% end %>

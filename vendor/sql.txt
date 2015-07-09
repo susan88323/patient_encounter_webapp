@@ -1,0 +1,5 @@
+1. SELECT * FROM patients WHERE last_name LIKE '%mit%';
+
+2. SELECT DISTINCT patients.* FROM patients, encounters WHERE patients.patient_id = encounters.patient_id AND encounters.discharged_at IS NOT NULL;
+
+3. SELECT DISTINCT patients.* FROM patients, encounters WHERE patients.patient_id = encounters.patient_id AND (encounters.admitted_at BETWEEN '2014-07-05 00:00:00' AND '2014-08-19 23:59:59');
